@@ -1,4 +1,5 @@
 class Lamp {
+  // ignore: prefer_typing_uninitialized_variables
   var counter;
   Lamp(this.counter);
   String lampState = "";

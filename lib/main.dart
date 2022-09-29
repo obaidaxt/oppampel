@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'classes.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Ampel Projekt'),
     );
   }
 }
@@ -47,8 +48,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(30),
+                border: Border.all(
+                  color: const Color.fromARGB(255, 37, 32, 32),
+                  width: 5,
+                ),
+                color: Colors.blueGrey,
+                borderRadius: BorderRadius.circular(20),
               ),
               height: 300,
               width: 100,
@@ -62,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: lamp.lampState == "red" ||
                               lamp.lampState == "redYellow"
                           ? Colors.red
-                          : Color.fromARGB(0, 131, 122, 122),
+                          : Colors.black,
                     ),
                     height: 60,
                     width: 60,
@@ -74,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: lamp.lampState == "yellow" ||
                               lamp.lampState == "redYellow"
                           ? Colors.yellow
-                          : Color.fromARGB(0, 131, 122, 122),
+                          : Colors.black,
                     ),
                     height: 60,
                     width: 60,
@@ -85,7 +90,47 @@ class _MyHomePageState extends State<MyHomePage> {
                       borderRadius: BorderRadius.circular(30),
                       color: lamp.lampState == "green"
                           ? Colors.green
-                          : Color.fromARGB(0, 131, 122, 122),
+                          : Colors.black,
+                    ),
+                    height: 60,
+                    width: 60,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.blueGrey,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: const Color.fromARGB(255, 37, 32, 32),
+                  width: 5,
+                ),
+              ),
+              height: 200,
+              width: 100,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    child: Text(""),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: lamp.lampState == "red"
+                          ? const Color.fromARGB(255, 54, 244, 127)
+                          : Colors.black,
+                    ),
+                    height: 60,
+                    width: 60,
+                  ),
+                  Container(
+                    child: Text(""),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: lamp.lampState == "yellow" ||
+                              lamp.lampState == "redYellow"
+                          ? const Color.fromARGB(255, 231, 72, 24)
+                          : Colors.black,
                     ),
                     height: 60,
                     width: 60,
